@@ -7,8 +7,8 @@ from dataclasses import dataclass
 import yahp as hp
 
 from composer.models.model_hparams import ModelHparams
+from model import CIFAR10_ResNet9
 
-__all__ = ["CIFARResNet9Hparams"]
 
 
 @dataclass
@@ -21,5 +21,5 @@ class CIFARResNet9Hparams(ModelHparams):
     num_classes: int = hp.optional("The number of classes.  Needed for classification tasks", default=10)
 
     def initialize_object(self):
-        from composer.models import CIFAR10_ResNet9
+        from model import CIFAR10_ResNet9
         return CIFAR10_ResNet9(num_classes=self.num_classes)
