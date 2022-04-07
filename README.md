@@ -50,7 +50,7 @@ Composer is a library written in PyTorch that enables you to <b>train neural net
 Composer features:
 - 20+ methods for speeding up training networks for computer vision and language modeling. Don't waste hours trying to reproduce research papers when Composer has done the work for you.
 - An easy-to-use trainer that has been written to be as performant as possible and [integrates best practices](https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training) for efficient training.
-- Functional forms of all of our speedup methods that allow you to integrate them into your existing training loop.
+- Functional forms of all of our speedup methods that allow you to use them in your existing training loop.
 - Strong, _reproducible_ baselines to get you started as quickly as possible.
 
 ## Benefits
