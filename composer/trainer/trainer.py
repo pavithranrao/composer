@@ -574,7 +574,8 @@ class Trainer:
         if self.deepspeed_enabled or dist.get_world_size() > 1:
             # deepspeed requires torch.distributed to be initialized, even if the world size is 1
             # distributed is always required with multi-rank training
-            dist.initialize_dist(self._device.dist_backend, datetime.timedelta(seconds=dist_timeout))
+            if not dist.is_initialized():
+                dist.initialize_dist(self._device.dist_backend, datetime.timedelta(seconds=dist_timeout))
 
         if not seed:
             seed = reproducibility.get_random_seed()
